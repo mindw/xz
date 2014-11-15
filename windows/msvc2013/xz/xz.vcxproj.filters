@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ResourceCompile Include="..\..\..\src\xz\xz_w32res.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\xz\signals.h" />
+    <ClInclude Include="..\..\..\src\xz\suffix.h" />
+    <ClInclude Include="..\..\..\src\xz\util.h" />
+    <ClInclude Include="..\..\..\src\xz\args.h" />
+    <ClInclude Include="..\..\..\src\xz\coder.h" />
+    <ClInclude Include="..\..\..\src\xz\file_io.h" />
+    <ClInclude Include="..\..\..\src\xz\hardware.h" />
+    <ClInclude Include="..\..\..\src\xz\list.h" />
+    <ClInclude Include="..\..\..\src\xz\main.h" />
+    <ClInclude Include="..\..\..\src\xz\message.h" />
+    <ClInclude Include="..\..\..\src\xz\mytime.h" />
+    <ClInclude Include="..\..\..\src\xz\options.h" />
+    <ClInclude Include="..\..\..\src\xz\private.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\xz\suffix.c" />
+    <ClCompile Include="..\..\..\src\xz\util.c" />
+    <ClCompile Include="..\..\..\src\xz\args.c" />
+    <ClCompile Include="..\..\..\src\xz\coder.c" />
+    <ClCompile Include="..\..\..\src\xz\file_io.c" />
+    <ClCompile Include="..\..\..\src\xz\hardware.c" />
+    <ClCompile Include="..\..\..\src\xz\list.c" />
+    <ClCompile Include="..\..\..\src\xz\main.c" />
+    <ClCompile Include="..\..\..\src\xz\message.c" />
+    <ClCompile Include="..\..\..\src\xz\mytime.c" />
+    <ClCompile Include="..\..\..\src\xz\options.c" />
+    <ClCompile Include="..\..\..\src\xz\signals.c" />
+    <ClCompile Include="..\..\..\src\common\tuklib_mbstr_width.c" />
+    <ClCompile Include="..\..\..\src\common\tuklib_open_stdxxx.c" />
+    <ClCompile Include="..\..\..\src\common\tuklib_progname.c" />
+    <ClCompile Include="..\..\..\src\common\tuklib_cpucores.c" />
+    <ClCompile Include="..\..\..\src\common\tuklib_exit.c" />
+    <ClCompile Include="..\..\..\src\common\tuklib_mbstr_fw.c" />
+    <ClCompile Include="..\..\..\lib\getopt.c" />
+    <ClCompile Include="..\..\..\lib\getopt1.c" />
+  </ItemGroup>
+</Project>

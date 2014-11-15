@@ -67,7 +67,7 @@ extern void message_error(const char *fmt, ...)
 /// \brief      Prints an error message and exits with EXIT_ERROR
 ///
 /// The message is printed only if verbosity level is at least V_ERROR.
-extern void message_fatal(const char *fmt, ...)
+__declspec(noreturn) extern void message_fatal(const char *fmt, ...)
 		lzma_attribute((__format__(__printf__, 1, 2)))
 		lzma_attribute((__noreturn__));
 
