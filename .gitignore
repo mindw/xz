@@ -64,3 +64,14 @@ build-aux/test-driver
 /src/liblzma/api/Makefile
 /src/lzmainfo/Makefile
 /src/xzdec/Makefile
+
+/windows/msvc2012/*.suo
+/windows/msvc2012/*.sdf
+/windows/msvc2012/*.opensdf
+/windows/msvc2012/Debug
+/windows/msvc2012/Release
+/windows/msvc2012/x64
+/windows/msvc2012/**/Debug
+/windows/msvc2012/**/Release
+/windows/msvc2012/**/x64
+/windows/msvc2012/**/*.user

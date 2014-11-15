@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ResourceCompile Include="..\..\..\src\xzdec\xzdec_w32res.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\xzdec\xzdec.c" />
+    <ClCompile Include="..\..\..\src\common\tuklib_progname.c" />
+    <ClCompile Include="..\..\..\src\common\tuklib_exit.c" />
+    <ClCompile Include="..\..\..\lib\getopt1.c" />
+    <ClCompile Include="..\..\..\lib\getopt.c" />
+  </ItemGroup>
+</Project>
