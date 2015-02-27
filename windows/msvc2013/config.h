@@ -9,7 +9,9 @@
 #define ssize_t intptr_t
 #define SSIZE_MAX INTPTR_MAX
 
+#if _MSC_VER <= 1900
 #define snprintf _snprintf
+#endif
 #define strcasecmp _stricmp
 
 /* Prefix for symbols exported by tuklib_*.c files */
@@ -105,8 +107,10 @@
 /* Define to 1 to enable hc4 match finder. */
 #define HAVE_MF_HC4 1
 
+#if _MSC_VER >= 1800
 /* Define to 1 if stdbool.h conforms to C99. */
 #define HAVE_STDBOOL_H 1
+#endif
 
 /* Define to 1 if you have the <stdint.h> header file. */
 #define HAVE_STDINT_H 1

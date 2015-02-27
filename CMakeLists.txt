@@ -37,30 +37,37 @@ if (MSVC)
     set(VER_NUM "${PROJECT_VERSION_MAJOR},${PROJECT_VERSION_MINOR},${PROJECT_VERSION_PATCH},0")
 
     file(COPY 
-            windows/msvc2013/config.h 
-            windows/msvc2013/getopt.h 
+            windows/msvc2013/config.h
             windows/msvc2013/unistd.h 
           DESTINATION ${CMAKE_BINARY_DIR}
         )
-    
+        
+    configure_file(
+        lib/getopt.in.h
+        ${CMAKE_BINARY_DIR}/getopt.h
+         @ONLY
+        )
     
 endif()
 
 function(add_win32_rc target)
+    get_target_property(VER_INTERNALNAME_STR ${target} OUTPUT_NAME)
+
+    if (VER_INTERNALNAME_STR MATCHES "VER_INTERNALNAME_STR-NOTFOUND")
+        set(VER_INTERNALNAME_STR "${target}")
+    endif()
+    get_target_property(VER_FILEDESCRIPTION_STR ${target} DESCRIPTION)
 
     get_target_property(type ${target} TYPE)
     if (${type} STREQUAL "EXECUTABLE")
         set(VER_FILETYPE "VFT_APP")
-        set(VER_ORIGINALFILENAME_STR "${target}${CMAKE_EXECUTABLE_SUFFIX}")
+        set(VER_ORIGINALFILENAME_STR "${VER_INTERNALNAME_STR}${CMAKE_EXECUTABLE_SUFFIX}")
     elseif (${type} STREQUAL "SHARED_LIBRARY")
         set(VER_FILETYPE "VFT_DLL")
-        set(VER_ORIGINALFILENAME_STR "${CMAKE_SHARED_LIBRARY_PREFIX}${target}${CMAKE_SHARED_LIBRARY_SUFFIX}")
+        set(VER_ORIGINALFILENAME_STR "${CMAKE_SHARED_LIBRARY_PREFIX}${VER_INTERNALNAME_STR}${CMAKE_SHARED_LIBRARY_SUFFIX}")
     endif()
-    message(${VER_ORIGINALFILENAME_STR})
 
-    set(VER_INTERNALNAME_STR ${target})
-    get_target_property(VER_FILEDESCRIPTION_STR ${target} DESCRIPTION)
-    set(OUT_FNAME "${CMAKE_CURRENT_BINARY_DIR}/${target}.rc")
+    set(OUT_FNAME "${CMAKE_CURRENT_BINARY_DIR}/${VER_INTERNALNAME_STR}.rc")
     configure_file(
          ${CMAKE_SOURCE_DIR}/windows/version.rc.cmakein
          ${OUT_FNAME}
@@ -441,7 +448,6 @@ install(TARGETS lzma lzma-static xz xz-static xzdec lzmadec lzmainfo EXPORT xz
     RUNTIME DESTINATION "bin"
     ARCHIVE DESTINATION "lib"
     LIBRARY DESTINATION "lib"
-    INCLUDES DESTINATION "include"
     )
 
 install(DIRECTORY src/liblzma/api/ DESTINATION include
