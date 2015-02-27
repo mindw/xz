@@ -575,7 +575,7 @@ extern LZMA_API(lzma_ret) lzma_index_cat(lzma_index *dest, lzma_index *src,
  * \return      A copy of the lzma_index, or NULL if memory allocation failed.
  */
 extern LZMA_API(lzma_index *) lzma_index_dup(
-	const lzma_index * i, const lzma_allocator * allocator)
+		const lzma_index *i, const lzma_allocator *allocator)
 		lzma_nothrow lzma_attr_warn_unused_result;
 
 
@@ -594,7 +594,7 @@ extern LZMA_API(lzma_index *) lzma_index_dup(
  *              - LZMA_PROG_ERROR
  */
 extern LZMA_API(lzma_ret) lzma_index_encoder(
-	lzma_stream * restrict strm, const lzma_index * restrict i)
+		lzma_stream *strm, const lzma_index *i)
 		lzma_nothrow lzma_attr_warn_unused_result;
 
 
