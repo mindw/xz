@@ -2,14 +2,13 @@ cmake_minimum_required(VERSION 3.0)
 
 project(
     xz 
-    VERSION 5.2.0
+    VERSION 5.2.1
     LANGUAGES C
 )
 
 include(FeatureSummary)
 
-#set (VERSION 5.2.0)
-set (SOVERSION 7.0.2)
+set (SOVERSION 7.1.2)
 #option (BUILD_SHARED_LIBS "Build Shared Libraries" ON) 
 #option (BUILD_TESTS "Build Tests" ON) 
 
